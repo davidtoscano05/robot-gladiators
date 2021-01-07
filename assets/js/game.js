@@ -2,15 +2,14 @@ var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
-console.log(playerName, playerAttack, playerHealth);
 
-var enemyName = "Roborto";
+var enemyNames = ["Roborto", "Amy Andriod", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-var fight =function() {
+var fight =function(enemyName) {
     window.alert("Welcome to Robot Gladiators!");
-    var promtFight = window.prompt("Would you like to Fight or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
+    var promptFight = window.prompt("Would you like to Fight or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose."); 
     // if player choses to fight, then fight
 if (promptFight === "fight" || promptFight === "FIGHT") {
     // remove enemy's health by subtracting the amount set in the playerAttack variable
@@ -56,4 +55,6 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
   }
 }
 
-fight();
+for (var i =0; i < enemyNames.length; i++){
+    fight(enemyNames[i]);
+}
